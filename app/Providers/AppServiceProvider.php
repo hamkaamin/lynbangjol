@@ -27,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        require_once app_path('Helpers\\Stringify.php');
+        //require_once app_path('Helpers\\Stringify.php');
     }
 }
