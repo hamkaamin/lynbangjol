@@ -67,10 +67,10 @@
                     <td>{{$rekap->id}}</td>
                     <td>{{$rekap->nik}}</td>
                     <td>{{$rekap->nama}}</td>
-                    <td>{{str_limit($rekap->issue, 170, '...')}}</td>
-                    <!--td>{{str_limit($rekap->urgensi, 100, '...')}}</td>
-                    <td>{{str_limit($rekap->harapan, 100, '...')}}</td>
-                    <td>{{str_limit($rekap->manfaat, 100, '...')}}</td-->
+                    <td>{{Str::limit($rekap->issue, 170, '...')}}</td>
+                    <!--td>{{$rekap->urgensi}}</td>
+                    <td>{{$rekap->harapan}}</td>
+                    <td>{{$rekap->manfaat}}</td-->
                     <td>{{$rekap->namasatker}}</td>
                     <td style="width:120px">
 

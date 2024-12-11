@@ -39,14 +39,14 @@
             <div class="widget">
               <h4>Majalah Terbaru</h4>
               <ul class="recent-posts">
-                @php ($num = 0)
+                @php ($num = 0) @endphp
                 @foreach ($majalahsSide as $majalah)
                     <li><a href="{{ url('majalahView/filter/id/'.$majalah->id) }}"><img src="{{ asset($majalah->cover_filename) }}" alt="" style="max-width: 50px"/> {{ $majalah->nama }}</a>
                         <div class="clear">
                         </div>
                         <span class="date"><i class="icon-calendar"></i> {{ Carbon\Carbon::parse($majalah->tgl_publikasi)->format('d M Y') }}</span>
                     </li>
-                    @php ($num++)
+                    @php ($num++) @endphp
                     @if ($num > 3) 
                         @break
                     @endif
@@ -83,13 +83,13 @@
                       <li class="first"><i class="icon-calendar"></i><span>{{ Carbon\Carbon::parse($majalah->tgl_publikasi)->format('Y') }}</span></li>
                       <li><i class="icon-list-alt"></i><span><a href="#">{{ $majalah->halaman }} halaman</a></span></li>
                       <li class="last"><i class="icon-tags"></i><span>
-                              @php ($count = 0)
+                              @php ($count = 0) @endphp
                               @foreach ($majalah->majalahKategoris as $majalahKategori)
                                 @if($count != 0)
                                 , 
                                 @endif
                                 <a href="{{ url('majalahView/filter/kategori/'.$majalahKategori->kategoris->id) }}">{{ $majalahKategori->kategoris->nama }}</a> 
-                                @php ($count++)
+                                @php ($count++) @endphp
                               @endforeach
                           </span></li>
                           <br/>

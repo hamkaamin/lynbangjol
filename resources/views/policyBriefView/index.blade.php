@@ -39,14 +39,14 @@
             <div class="widget">
               <h4>Policy Brief Terbaru</h4>
               <ul class="recent-posts">
-                @php ($num = 0)
+                @php ($num = 0) @endphp
                 @foreach ($policys as $policy)
                     <li><a href="{{ url('policyBrief/filter/id/'.$policy->id) }}"><img src="{{ asset($policy->cover_filename) }}" alt="" style="max-width: 50px"/> {{ $policy->nama }}</a>
                         <div class="clear">
                         </div>
                         <span class="date"><i class="icon-calendar"></i> {{ Carbon\Carbon::parse($policy->tgl_publikasi)->format('d M Y') }}</span>
                     </li>
-                    @php ($num++)
+                    @php ($num++) @endphp
                     @if ($num > 3) 
                         @break
                     @endif
