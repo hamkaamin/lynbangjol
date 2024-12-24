@@ -35,14 +35,14 @@
             <div class="widget">
               <h4>Laporan Penelitian Terbaru</h4>
               <ul class="recent-posts">
-                @php ($num = 0)
+                @php ($num = 0) @endphp
                 @foreach ($laporansSide as $laporan)
                     <li><a href="{{ url('lapPenelitianEks/filter/id/'.$laporan->id) }}"><img src="{{ asset($laporan->cover_filename) }}" alt="" style="max-width: 50px"/> {{ $laporan->judul }}</a>
                         <div class="clear">
                         </div>
                         <span class="date"><i class="icon-calendar"></i> {{ $laporan->tahun_penelitian }}</span>
                     </li>
-                    @php ($num++)
+                    @php ($num++) @endphp
                     @if ($num > 3) 
                         @break
                     @endif
@@ -66,13 +66,13 @@
             <div class="post-heading">
               <h3><a href="#">{{ $laporan->judul }}</a></h3>
               <h6>
-                  @php ($count = 0)
+                  @php ($count = 0) @endphp
                   @foreach ($laporan->laporanAuthors as $laporanAuthor)
                         @if($count != 0)
                             ;
                         @endif
                         {{ $laporanAuthor->authors->nama }}
-                        @php ($count++)
+                        @php ($count++) @endphp
                   @endforeach
               </h6>
             </div>
@@ -88,13 +88,13 @@
                   <li class="first"><i class="icon-calendar"></i><span> {{ $laporan->tahun_penelitian }}</span></li>
                   <li><i class="icon-list-alt"></i><span><a href="#">{{ $laporan->halaman }} halaman</a></span></li>
                   <li class="last"><i class="icon-tags"></i><span>
-                          @php ($count = 0)
+                          @php ($count = 0) @endphp
                           @foreach ($laporan->laporanKategoris as $laporanKategori)
                               @if($count != 0)
                               , 
                               @endif
                               <a href="{{ url('lapPenelitianEks/filter/kategori/'.$laporanKategori->kategoris->id) }}">{{ $laporanKategori->kategoris->nama }}</a> 
-                              @php ($count++)
+                              @php ($count++) @endphp
                           @endforeach
                       </span></li>
                 </ul>

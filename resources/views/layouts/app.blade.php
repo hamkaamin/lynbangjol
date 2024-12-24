@@ -73,7 +73,7 @@
                                                     <li><a href="{{ url('lapPenelitianEks') }}">Laporan Penelitian
                                                             Eksternal</a></li>
                                                     <!-- <li><a href="{{ url('jurnalView') }}">Jurnal Cakrawala</a></li> -->
-                                                    <li><a href="http://cakrawalajournal.org/">Jurnal Cakrawala</a></li>
+                                                    <li><a href="http://cakrawalajournal.org/" target="_blank">Jurnal Cakrawala</a></li>
                                                     <li><a href="{{ url('majalahView') }}">Majalah Teropong</a></li>
                                                     <li><a href="{{ url('policyBrief') }}">Policy Brief</a></li>
                                                 </ul>

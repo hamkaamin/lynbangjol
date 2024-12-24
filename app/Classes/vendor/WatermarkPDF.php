@@ -3,7 +3,7 @@
 namespace App\Classes\vendor;
 
 require_once('fpdf/fpdf.php');
-require_once('fpdi/autoload.php');
+//require_once('fpdi/autoload.php');
 //require_once('autoload.php');
 
 
