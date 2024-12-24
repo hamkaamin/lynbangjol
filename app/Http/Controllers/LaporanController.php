@@ -29,7 +29,13 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        //
+        /*
+        if (class_exists(\App\Classes\vendor\WatermarkPDF::class)) {
+            dd ('Class exists!');
+        } else {
+            dd ('Class does not exist.');
+        }*/
+
         Visitor::hit();
         $laporans = Laporan::orderBy('laporans.updated_at', 'desc');
         $user = auth()->user();
@@ -94,7 +100,7 @@ class LaporanController extends Controller
         if($request->get('halaman_show')) $laporan->halaman_show=  $request->get('halaman_show');
         else $laporan->halaman_show= 10;
         $laporan->tahun_watermark=  $request->get('tahun_watermark');
-        
+                
         //======================= GENERATE WATERMARK LAPKIR & EKSUM=============================//
         if($request->get('tahun_watermark')) $watermarkTahun = $request->get('tahun_watermark');
         else if($request->get('tahun_penelitian')) $watermarkTahun = $request->get('tahun_penelitian');
@@ -121,7 +127,7 @@ class LaporanController extends Controller
                 $request->file('cover_filename')->move("uploads/laporan/cover",$fileName);
                 $laporan->cover_filename = 'uploads/laporan/cover/'.$fileName;
             }
-       
+            
         /*-------------------------------------*/
         if($lapkir_file)
         {   
