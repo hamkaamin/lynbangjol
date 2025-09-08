@@ -58,7 +58,7 @@
                                                 <a  style=" padding:2px 4px" href="#"><i class="icon-comments icon-white"></i>&ensp; LAYANAN </a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{ url('icp') }}">Konsultasi ICP</a></li>
-                                                    <li><a href="http://e-nikibang.balitbang.jatimprov.go.id/" target="_blank">Konsultasi HKI</a></li>
+                                                    <li><a href="http://podokayainjatim.brida.jatimprov.go.id/" target="_blank">Konsultasi HKI</a></li>
                                                     <li><a href="{{ asset('doc/SOP Penyusunan ICP dan TOR.pdf') }}">SOP ICP & TOR</a></li>
 
                                                 </ul>
@@ -74,7 +74,7 @@
                                                             Eksternal</a></li>
                                                     <!-- <li><a href="{{ url('jurnalView') }}">Jurnal Cakrawala</a></li> -->
                                                     <li><a href="http://cakrawalajournal.org/" target="_blank">Jurnal Cakrawala</a></li>
-                                                    <li><a href="{{ url('majalahView') }}">Majalah Teropong</a></li>
+                                                    <li><a href="{{ url('majalahView') }}">Majalah BRIDA Time</a></li>
                                                     <li><a href="{{ url('policyBrief') }}">Policy Brief</a></li>
                                                 </ul>
                                             </li>

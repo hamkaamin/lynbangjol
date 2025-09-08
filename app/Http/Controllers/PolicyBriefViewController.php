@@ -33,9 +33,9 @@ class PolicyBriefViewController extends Controller
         else 
         {
             $policys = PolicyBrief::select('policys.id as id', 'policys.*')
-                ->join('majalah_artikels','majalah_artikels.majalah_id', 'policys.id')
-                ->join('majalah_authors', 'majalah_authors.artikel_id','majalah_artikels.id')
-                ->join('authors', 'majalah_authors.author_id','authors.id')
+                //->join('majalah_artikels','majalah_artikels.majalah_id', 'policys.id')
+                //->join('majalah_authors', 'majalah_authors.artikel_id','majalah_artikels.id')
+                //->join('authors', 'majalah_authors.author_id','authors.id')
                 ->orderBy('policys.created_at', 'desc')
                 ->where('policys.nama', 'like', "%".$search."%")
                 ->where('policys.deleted_at', null)
@@ -54,21 +54,21 @@ class PolicyBriefViewController extends Controller
         Visitor::hit();
         if($tipe == 'kategori')
         {
-            $majalahs = PolicyBrief::select('majalahs.id as id', 'majalahs.*')
+            $policys = PolicyBrief::select('policys.id as id', 'policys.*')
                     ->join('majalah_kategoris', 'majalah_kategoris.majalah_id','majalahs.id')
-                    ->orderBy('majalahs.created_at', 'desc')
+                    ->orderBy('policys.created_at', 'desc')
                     ->where('majalah_kategoris.kategori_id', $filterVar)
                     ->paginate(5);
         }
         
         else
         {
-            $majalahs = PolicyBrief::orderBy('majalahs.created_at', 'desc')->where('majalahs.'.$tipe, $filterVar)->paginate(5);
+            $policys = PolicyBrief::orderBy('policys.created_at', 'desc')->where('policys.'.$tipe, $filterVar)->paginate(5);
         }
         
-        $majalahsSide = PolicyBrief::orderBy('created_at', 'desc')->get();
+        $policysSide = PolicyBrief::orderBy('created_at', 'desc')->get();
         $kategoris = Kategori::orderBy('nama', 'asc')->get();
         
-        return view('policyBriefView.index', compact('majalahs', 'majalahsSide', 'kategoris'));
+        return view('policyBriefView.index', compact('policys', 'policysSide', 'kategoris'));
     }
 }
